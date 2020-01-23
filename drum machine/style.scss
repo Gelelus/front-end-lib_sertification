@@ -1,0 +1,102 @@
+@mixin box-shadow($x, $y, $blur, $c){ 
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+@mixin selectable($n){
+  -moz-user-select: $n;
+  -khtml-user-select: $n;
+  -webkit-user-select: $n;
+  user-select: $n;
+}
+body {
+  margin: 0;
+  background:#d0d0d5;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+ 
+#drum-machine{
+  
+  border-radius:40px;
+  width:600px;
+  border: 2px solid black;
+  margin:0 auto;
+  background: gray;
+  padding:1em;
+   @include box-shadow(6px, 3px, 5px, rgba(0, 0, 0, 0.5));
+  #menu{
+    margin-left:2em;
+    display: inline-block;
+    width:300px;
+    text-align:center;
+    vertical-align: top;
+    font-size: 1.2em;
+    #display{
+      background: white;
+      text-align:center;
+      border-radius: 10px;
+      height:1.2em;
+    }
+    .volume-slider{
+      border-bottom: 1px solid white;
+      padding-bottom:1em;
+      @include selectable(none);
+    }
+    .volume-slider>*{
+      display:inline-block;
+      vertical-align: middle;
+    }
+    #seqs{
+      margin-top: 1em;
+      position:relative;
+      
+      #seq{
+        margin-top:10px;
+        padding-top:10px;
+        border-top:1px solid black;
+        border-bottom:1px solid black;
+        height:2em;
+        
+        p, i{
+          display:inline-block;
+          margin:0;
+          vertical-align: top;
+        }
+       
+        i{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+ 
+  #pad-box{
+    @include selectable(none);
+    display:inline-block;
+    width:250px;
+    
+    .drum-pad {
+      display:inline-block;
+      height: 70px;
+      width: 70px;
+      cursor: pointer;
+      font-size: 1.3em;
+      font-weight:600;
+      margin: 5px;
+      border: 1px solid black;
+      text-align: center;
+      line-height: 70px;
+      border-radius: 10px 10px;
+      border: 1px solid #be3144;
+      background: #be3144;
+      box-shadow: 2px 3px 1px black,
+              inset 2px 3px 5px rgba(255,255,255,0.5),
+              inset -2px -3px 5px rgba(0,0,0,0.5);
+    }
+  }
+}
