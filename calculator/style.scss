@@ -1,0 +1,90 @@
+body{
+  background: black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+#app{
+  display:block;
+  background:gray;
+  border:1px solid #333;
+  
+  width:400px;
+  #Calculator{
+    
+    .screen{
+      text-align: right;
+      background: #edebe8;
+      padding:10px 15px 10px 15px;
+      position: relative;
+      .scroll-butn{
+        position: absolute;
+        width: 12px;
+        cursor: pointer;
+      }
+      .left-formul{
+        left:0px;
+      }
+      .right-formul{
+        
+      }
+      .left-display{
+        left:0px;
+        top:40px;
+      }
+      .right-display{
+        top:40px;
+      }
+      #formul{
+        color: #333;
+        height:1.1em;
+        white-space:nowrap;
+        overflow:hidden;
+        scroll-behavior: smooth;
+      }
+      #display{
+        scroll-behavior: smooth;
+        height:1.2em;
+        font-size: 2.3em;
+        overflow:hidden;
+      }
+    }
+    #inter-face{
+      position:relative;
+      z-index:2;
+      outline: 2px solid black;
+      
+      .but{
+        font-size: 1.2em;
+       height: 50px;
+       width: 100px;
+       outline: 1px solid gray;
+       border: none;
+       position:relative;
+        
+      }
+
+       #zero{
+          width: 200px;
+        }
+      .equals, .add, .subtract, .multiply, .divide{
+        background:#d9d9ce
+      }
+      .clear, .lite-clear{
+        background:#c4c4bb
+      }
+      #clear{
+        width: 200px;
+      }
+       :hover{
+         z-index:1;
+         outline: .05em solid black;
+         background: grey;
+         color: white;
+        }
+    }
+  }
+}
